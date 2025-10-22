@@ -1,10 +1,9 @@
 # AWS Lambda Functions with Terraform Infrastructure - Homework Project
 
-![Project Screenshot](Ekran%20Resmi%202025-10-22%2017.44.10.png)
-
 ## 📋 Proje Özeti
 
 Bu proje, AWS Lambda fonksiyonları ve Terraform altyapısı kullanarak serverless bir uygulama geliştirme örneğidir.
+<img width="1470" height="956" alt="Ekran Resmi 2025-10-22 17 44 10" src="https://github.com/user-attachments/assets/8939ec2c-4f2d-4b05-9ba4-2d711ff6723f" />
 
 ## 🚀 Özellikler
 
