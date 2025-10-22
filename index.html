@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Serverless Function+</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cloud"></i> My First Serverless Function+</h1>
+            <p>Modern bulut tabanlı sunucusuz uygulama</p>
+        </header>
+
+        <main class="main-content">
+            <!-- API Status Section -->
+            <section class="api-status">
+                <h2><i class="fas fa-heartbeat"></i> API Durumu</h2>
+                <div class="status-grid">
+                    <div class="status-item" id="hello-status">
+                        <i class="fas fa-hand-wave"></i>
+                        <span>Hello API</span>
+                        <div class="status-indicator" id="hello-indicator"></div>
+                    </div>
+                    <div class="status-item" id="math-status">
+                        <i class="fas fa-calculator"></i>
+                        <span>Math API</span>
+                        <div class="status-indicator" id="math-indicator"></div>
+                    </div>
+                    <div class="status-item" id="weather-status">
+                        <i class="fas fa-cloud-sun"></i>
+                        <span>Weather API</span>
+                        <div class="status-indicator" id="weather-indicator"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hello Function Section -->
+            <section class="function-section">
+                <h2><i class="fas fa-hand-wave"></i> Hello Function</h2>
+                <p>Kişiselleştirilmiş selamlama mesajı alın</p>
+                <div class="function-demo">
+                    <div class="input-group">
+                        <input type="text" id="hello-name" placeholder="Adınızı girin (örn: Ali)" value="Ali">
+                        <button onclick="testHelloFunction()" class="btn btn-primary">
+                            <i class="fas fa-play"></i> Test Et
+                        </button>
+                    </div>
+                    <div class="result-box" id="hello-result">
+                        <div class="loading" id="hello-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> İşleniyor...
+                        </div>
+                        <div class="result-content" id="hello-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Math Function Section -->
+            <section class="function-section">
+                <h2><i class="fas fa-calculator"></i> Math Functions</h2>
+                <p>Matematiksel işlemler yapın</p>
+                
+                <!-- Square Function -->
+                <div class="math-demo">
+                    <h3>Kare Hesaplama</h3>
+                    <div class="input-group">
+                        <input type="number" id="square-number" placeholder="Sayı girin" value="5">
+                        <button onclick="testSquareFunction()" class="btn btn-secondary">
+                            <i class="fas fa-square"></i> Kare Al
+                        </button>
+                    </div>
+                    <div class="result-box" id="square-result">
+                        <div class="loading" id="square-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Hesaplanıyor...
+                        </div>
+                        <div class="result-content" id="square-content"></div>
+                    </div>
+                </div>
+
+                <!-- Factorial Function -->
+                <div class="math-demo">
+                    <h3>Faktöriyel Hesaplama</h3>
+                    <div class="input-group">
+                        <input type="number" id="factorial-number" placeholder="Sayı girin (0-20)" value="5" min="0" max="20">
+                        <button onclick="testFactorialFunction()" class="btn btn-secondary">
+                            <i class="fas fa-exclamation"></i> Faktöriyel
+                        </button>
+                    </div>
+                    <div class="result-box" id="factorial-result">
+                        <div class="loading" id="factorial-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Hesaplanıyor...
+                        </div>
+                        <div class="result-content" id="factorial-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weather Function Section -->
+            <section class="function-section">
+                <h2><i class="fas fa-cloud-sun"></i> Weather Function</h2>
+                <p>Şehir bazlı hava durumu bilgisi alın</p>
+                <div class="function-demo">
+                    <div class="input-group">
+                        <select id="weather-city">
+                            <option value="Istanbul">Istanbul</option>
+                            <option value="Ankara">Ankara</option>
+                            <option value="Izmir">Izmir</option>
+                            <option value="Antalya">Antalya</option>
+                            <option value="Bursa">Bursa</option>
+                        </select>
+                        <button onclick="testWeatherFunction()" class="btn btn-info">
+                            <i class="fas fa-cloud-sun"></i> Hava Durumu
+                        </button>
+                    </div>
+                    <div class="result-box" id="weather-result">
+                        <div class="loading" id="weather-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Yükleniyor...
+                        </div>
+                        <div class="result-content" id="weather-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- API Information -->
+            <section class="api-info">
+                <h2><i class="fas fa-info-circle"></i> API Bilgileri</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3>Hello Endpoint</h3>
+                        <code>GET /hello?name=Ali</code>
+                    </div>
+                    <div class="info-item">
+                        <h3>Math Square</h3>
+                        <code>GET /math/square?number=5</code>
+                    </div>
+                    <div class="info-item">
+                        <h3>Math Factorial</h3>
+                        <code>GET /math/factorial?number=5</code>
+                    </div>
+                    <div class="info-item">
+                        <h3>Weather</h3>
+                        <code>GET /weather?city=Istanbul</code>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 My First Serverless Function+ - Eğitim Projesi</p>
+            <p>Powered by AWS Lambda, API Gateway, S3 & Terraform</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

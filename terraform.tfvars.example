@@ -1,0 +1,10 @@
+# AWS Configuration
+aws_region = "us-east-1"
+
+# Project Configuration
+project_name = "my-first-serverless"
+environment = "prod"
+
+# Lambda Configuration
+lambda_timeout = 30
+lambda_memory_size = 128

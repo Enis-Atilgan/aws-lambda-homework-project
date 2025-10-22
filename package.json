@@ -1,0 +1,22 @@
+{
+  "name": "my-first-serverless-functions",
+  "version": "1.0.0",
+  "description": "Serverless functions for my first serverless project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1490.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "serverless",
+    "aws",
+    "lambda",
+    "nodejs"
+  ],
+  "author": "Student",
+  "license": "MIT"
+}
