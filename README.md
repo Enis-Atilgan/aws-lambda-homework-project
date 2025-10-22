@@ -1,102 +1,71 @@
-# 🎥 Demo ve Ekran Görüntüleri
+# AWS Lambda Functions with Terraform Infrastructure - Homework Project
 
-Bu klasör, **My First Serverless Function+** projesinin demo videoları ve ekran görüntülerini içerir.
+![Project Screenshot](Ekran%20Resmi%202025-10-22%2017.44.10.png)
 
-## 📁 İçerik
+## 📋 Proje Özeti
 
-### 🎬 Demo Video
-- `demo-video.mp4` - Projenin tam çalışma demo'su (1 dakika)
-- Proje özelliklerinin gösterimi
-- API endpoint'lerinin test edilmesi
-- Frontend arayüzünün kullanımı
+Bu proje, AWS Lambda fonksiyonları ve Terraform altyapısı kullanarak serverless bir uygulama geliştirme örneğidir.
 
-### 📸 Ekran Görüntüleri
+## 🚀 Özellikler
 
-#### 1. Proje Yapısı
-- `01-project-structure.png` - GitHub repository yapısı
-- `02-terraform-files.png` - Terraform konfigürasyon dosyaları
+- **3 Lambda Fonksiyonu**: Hello, Math, Weather
+- **Terraform Infrastructure**: Otomatik altyapı yönetimi
+- **Frontend Website**: Modern web arayüzü
+- **API Gateway**: RESTful API endpoint'leri
+- **S3 Static Hosting**: Website hosting
 
-#### 2. AWS Console
-- `03-lambda-functions.png` - AWS Lambda fonksiyonları
-- `04-api-gateway.png` - API Gateway konfigürasyonu
-- `05-s3-bucket.png` - S3 static website hosting
-- `06-cloudwatch-logs.png` - CloudWatch logları
+## 📁 Proje Yapısı
 
-#### 3. Frontend Arayüz
-- `07-frontend-homepage.png` - Ana sayfa görünümü
-- `08-hello-function-test.png` - Hello function test sonucu
-- `09-math-function-test.png` - Math function test sonucu
-- `10-weather-function-test.png` - Weather function test sonucu
-
-#### 4. API Testleri
-- `11-curl-hello-test.png` - cURL ile Hello API testi
-- `12-curl-math-test.png` - cURL ile Math API testi
-- `13-curl-weather-test.png` - cURL ile Weather API testi
-
-#### 5. CI/CD Pipeline
-- `14-github-actions.png` - GitHub Actions workflow
-- `15-deployment-success.png` - Başarılı deployment
-- `16-terraform-outputs.png` - Terraform output'ları
-
-## 🚀 Hızlı Test Komutları
-
-### API Endpoint Testleri
-```bash
-# Hello Function
-curl "https://your-api-gateway-url/hello?name=Ali"
-
-# Math Square
-curl "https://your-api-gateway-url/math/square?number=5"
-
-# Math Factorial
-curl "https://your-api-gateway-url/math/factorial?number=5"
-
-# Weather
-curl "https://your-api-gateway-url/weather?city=Istanbul"
+```
+aws-lambda-homework-project/
+├── functions/           # Lambda fonksiyonları
+│   ├── hello/          # Hello function
+│   ├── math/           # Math function
+│   └── weather/        # Weather function
+├── frontend/           # Web arayüzü
+├── terraform/          # Infrastructure as Code
+└── demo/              # Demo ve dokümantasyon
 ```
 
-### Terraform Komutları
-```bash
-# Altyapıyı oluştur
-cd terraform
-terraform init
-terraform plan
-terraform apply
+## 🛠️ Kurulum
 
-# Altyapıyı temizle
-terraform destroy
-```
+1. **Terraform ile altyapıyı oluşturun:**
+   ```bash
+   cd terraform
+   terraform init
+   terraform plan
+   terraform apply
+   ```
 
-## 📊 Performans Metrikleri
+2. **Lambda fonksiyonlarını deploy edin:**
+   ```bash
+   cd functions
+   npm install
+   # Her fonksiyon için ayrı ayrı deploy
+   ```
 
-### Lambda Fonksiyon Metrikleri
-- **Cold Start Süresi:** ~200-500ms
-- **Warm Start Süresi:** ~50-100ms
-- **Memory Kullanımı:** 128MB
-- **Timeout:** 30 saniye
+3. **Frontend'i test edin:**
+   ```bash
+   cd frontend
+   # S3 bucket URL'ini kullanarak test edin
+   ```
 
-### API Gateway Metrikleri
-- **Response Time:** ~100-300ms
-- **Throughput:** 1000+ requests/second
-- **Availability:** 99.9%
+## 📊 API Endpoints
 
-## 🔧 Troubleshooting
+- **Hello Function**: `/api/hello`
+- **Math Function**: `/api/math`
+- **Weather Function**: `/api/weather`
 
-### Yaygın Sorunlar
-1. **CORS Hatası:** API Gateway'de CORS ayarlarını kontrol edin
-2. **Lambda Timeout:** Timeout değerini artırın
-3. **Permission Denied:** IAM rollerini kontrol edin
-4. **S3 Access:** Bucket policy'lerini kontrol edin
+## 🔧 Teknolojiler
 
-### Log Kontrolü
-```bash
-# CloudWatch loglarını kontrol et
-aws logs describe-log-groups --log-group-name-prefix "/aws/lambda/my-first-serverless"
-```
+- **AWS Lambda**: Serverless computing
+- **Terraform**: Infrastructure as Code
+- **API Gateway**: API management
+- **S3**: Static website hosting
+- **CloudWatch**: Logging ve monitoring
 
-## 📝 Notlar
+## 📝 Lisans
 
-- Tüm ekran görüntüleri 1920x1080 çözünürlükte alınmıştır
-- Demo video 60 FPS, 1080p kalitesinde kaydedilmiştir
-- Test verileri gerçek AWS ortamında çalıştırılmıştır
-- Tüm endpoint'ler başarıyla test edilmiştir
+Bu proje MIT lisansı altında lisanslanmıştır.
+
+---
